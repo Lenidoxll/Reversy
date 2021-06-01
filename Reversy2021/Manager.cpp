@@ -1,6 +1,8 @@
 #include "Manager.h"
 #include "Board.h"
 #include "Player.h"
+#include "Human.h"
+#include "Computer.h"
 
 Manager::Manager()
 {
@@ -19,13 +21,26 @@ bool Manager::init()
 	string name;
 	b = new Board();
 	
+	int type;
+	cout << "¬ведите тип белого игрока (0 - компьютер, люба€ друга€ цифра - человек) -> ";
+	cin >> type;
+	cin.ignore();
 	cout << " ¬ведите им€ игрока за белых -> ";
 	getline(cin, name);
-	playerWhite = new Player(name, Chip::white);
+	if (type == 0)
+		playerWhite = new Computer(name, Chip::white);
+	else
+		playerWhite = new Human(name, Chip::white);
 
+	cout << "¬ведите тип черного игрока (0 - компьютер, люба€ друга€ цифра - человек) -> ";
+	cin >> type;
+	cin.ignore();
 	cout << " ¬ведите им€ игрока за черных -> ";
 	getline(cin, name);
-	playerBlack = new Player(name, Chip::black);
+	if (type == 0)
+		playerBlack = new Computer(name, Chip::black);
+	else
+		playerBlack = new Human(name, Chip::black);
 
 	playerWhite->setBoard(b);
 	playerBlack->setBoard(b);

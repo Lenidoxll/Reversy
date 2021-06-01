@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Computer.cpp" />
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Reversy2021.cpp" />
@@ -147,6 +149,8 @@
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Chip.h" />
+    <ClInclude Include="Computer.h" />
+    <ClInclude Include="Human.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />

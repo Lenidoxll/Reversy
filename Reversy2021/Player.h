@@ -6,16 +6,16 @@ class Board;
 class Player
 {
 public:
-	Player(string _name, Chip _type);
-	~Player();
+	Player();
+	virtual ~Player();
 	string getName();
 	void setBoard(Board* b);
-	bool makeMove(int i, int j);
+	virtual bool makeMove(int i, int j);
 	Chip getType();
 	bool analisis();
 	//void showMatrix(bool** matrix);
 
-private:
+protected:
 	bool columnDown(int i, int j, bool change = true);
 	bool columnUp(int i, int j, bool change = true);
 	bool rowLeft(int i, int j, bool change = true);

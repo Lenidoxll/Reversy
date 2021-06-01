@@ -32,10 +32,10 @@ void showMatrix(T** matrix, int size)
 	}
 }
 
-Player::Player(string _name, Chip _type)
+Player::Player()
 {
-	name = _name;
-	type = _type;
+	name = "Zero";
+	type = Chip::empty;
 }
 
 Player::~Player()
@@ -54,15 +54,6 @@ void Player::setBoard(Board* b)
 
 bool Player::makeMove(int i, int j)
 {
-	if (board->control(i, j)) {
-		bool cd = columnDown(i, j), cu = columnUp(i, j), rl = rowLeft(i, j), rr = rowRight(i, j), ddl = diagDownLeft(i, j),
-			dul = diagUpLeft(i, j), dur = diagUpRight(i, j), ddr = diagDownRight(i, j);
-
-		if (cd || cu || rl || rr || ddl || dul || dur || ddr) {
-			board->setChip(i, j, type);
-			return true;
-		}
-	}
 	return false;
 }
 
