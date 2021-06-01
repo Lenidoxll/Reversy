@@ -103,6 +103,24 @@ bool Player::analisis()
 	return false;
 }
 
+bool Player::isHuman()
+{
+	return false;
+}
+
+bool Player::control(int i, int j)
+{
+	if (board->control(i, j)) {
+		bool cd = columnDown(i, j), cu = columnUp(i, j), rl = rowLeft(i, j), rr = rowRight(i, j), ddl = diagDownLeft(i, j),
+			dul = diagUpLeft(i, j), dur = diagUpRight(i, j), ddr = diagDownRight(i, j);
+
+		if (cd || cu || rl || rr || ddl || dul || dur || ddr) {
+			return true;
+		}
+	}
+	return false;
+}
+
 bool Player::columnDown(int i, int j, bool change)
 {
 	bool enemy = false;

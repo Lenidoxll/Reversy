@@ -13,9 +13,11 @@ public:
 	virtual bool makeMove(int i, int j);
 	Chip getType();
 	bool analisis();
+	virtual bool isHuman();
 	//void showMatrix(bool** matrix);
 
 protected:
+	virtual bool control(int i, int j);
 	bool columnDown(int i, int j, bool change = true);
 	bool columnUp(int i, int j, bool change = true);
 	bool rowLeft(int i, int j, bool change = true);

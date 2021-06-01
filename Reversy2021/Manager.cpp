@@ -86,12 +86,15 @@ void Manager::makeMove()
 	showBoard();
 
 	if (currentPlayer->analisis()) {
-		int row, col;
+		int row = 0, col = 0;
 		cout << "Игрок " << currentPlayer->getName() << ", Ваш ход..." << endl;
-		cout << "Введите строку -> ";
-		cin >> row;
-		cout << "Введите столбец -> ";
-		cin >> col;
+
+		if (currentPlayer->isHuman()) {
+			cout << "Введите строку -> ";
+			cin >> row;
+			cout << "Введите столбец -> ";
+			cin >> col;
+		}
 		if (!currentPlayer->makeMove(row, col)) {
 			cout << "Недопустимый ход. Попробуйте еще раз." << endl;
 			//showBoard();

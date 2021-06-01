@@ -23,3 +23,8 @@ bool Human::makeMove(int i, int j)
 	}
 	return false;
 }
+
+bool Human::isHuman()
+{
+	return true;
+}

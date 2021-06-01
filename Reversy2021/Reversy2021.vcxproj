@@ -143,7 +143,9 @@
     <ClCompile Include="Computer.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="MonteCarloEvolution.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Random.cpp" />
     <ClCompile Include="Reversy2021.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,8 +154,10 @@
     <ClInclude Include="Computer.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="MonteCarloEvolution.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Random.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

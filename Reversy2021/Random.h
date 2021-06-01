@@ -2,16 +2,19 @@
 #include "Player.h"
 #include "Board.h"
 
-class Computer :
+class Random :
     public Player
 {
 public:
-    Computer(string _name, Chip _type);
-    virtual ~Computer();
+    Random(Chip _type);
+    virtual ~Random();
     virtual bool makeMove(int row = 0, int column = 0);
     virtual bool isHuman();
 
 protected:
-    bool control(int i, int j);
+    virtual bool control(int i, int j);
+
+private:
+    bool variants(vector<int>& i, vector<int>& j);
 };
 

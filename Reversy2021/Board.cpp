@@ -10,6 +10,20 @@ Board::Board()
 	start();
 }
 
+Board::Board(Board* b)
+{
+	size = b->size;
+	chips = new Chip * [size];
+	for (unsigned int i = 0; i < size; i++)
+		chips[i] = new Chip[size];
+
+	for (unsigned int i = 0; i < size; i++)
+		for (unsigned int j = 0; j < size; j++)
+			chips[i][j] = b->getChip(i, j);
+
+	freeChips = b->getFreeChips();
+}
+
 Board::~Board()
 {
 	for (int i = 0; i < size; i++)
@@ -119,6 +133,11 @@ bool Board::reduce()
 		return true;
 	}
 	return false;
+}
+
+int Board::getFreeChips()
+{
+	return freeChips;
 }
 
 

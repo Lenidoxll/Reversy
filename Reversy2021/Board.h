@@ -5,6 +5,7 @@ class Board
 {
 public:
 	Board();
+	Board(Board* b);
 	~Board();
 
 	void start();
@@ -16,6 +17,7 @@ public:
 	bool isOver();
 	Chip victory();
 	bool reduce();
+	int getFreeChips();
 
 private:
 	Chip** chips;
